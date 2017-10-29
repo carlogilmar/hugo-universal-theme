@@ -1,7 +1,55 @@
 {{ if isset .Site.Params "features" }}
 {{ if .Site.Params.features.enable }}
 {{ if gt (len .Site.Data.features) 0 }}
+
+<section class="bar background-gray">
+    <div class="container">
+      <p class="lead text-center">
+        <strong>PROMOVEMOS LA AGILIDAD A TRAVÉS DE LOS PRINCIPIOS DEL MANIFIESTO ÁGIL</strong><br>
+			</p>
+			<div class="row text-center">
+				<div class="col-xs-6 col-sm-3">
+					<div class="box-simple">
+						<div class="icon">
+							<i class="fa fa-users"></i>
+						</div>
+						<h3> <b><u>Individuos e interacciones</u></b> sobre procesos y herramientas</h3>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3">
+					<div class="box-simple">
+						<div class="icon">
+							<i class="fa fa-code"></i>
+						</div>
+						<h3><b><u>Software funcionando</u></b> sobre documentación extensiva</h3>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3">
+					<div class="box-simple">
+						<div class="icon">
+							<i class="fa fa-handshake-o"></i>
+						</div>
+						<h3><b><u>Colaboración con el cliente</u></b> sobre negociación contractual</h3>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3">
+					<div class="box-simple">
+						<div class="icon">
+							<i class="fa fa-rocket"></i>
+						</div>
+						<h3><b><u>Respuesta ante el cambio</u></b> sobre seguir un plan</h3>
+					</div>
+				</div>
+			</div>
+    <div>
+</section>
+
+
 <section class="bar background-white">
+			<p class="lead text-center">
+				<strong>COMO COMUNIDAD PROMOVEMOS LO SIGUIENTE:</strong><br>
+			</p>
+
     <div class="container">
         {{ range $index, $element := sort .Site.Data.features "weight" }}
 		{{ if eq (mod $index 3) 0 }}
