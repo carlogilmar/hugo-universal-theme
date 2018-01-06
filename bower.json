@@ -1,0 +1,17 @@
+{
+  "name": "hugo-universal-theme",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Carlo Gilmar <carlogilmar12@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/carlogilmar/hugo-universal-theme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
