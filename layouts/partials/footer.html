@@ -1,15 +1,16 @@
 
 
 <div id="top" style="background:#F3A851"></div>
-<footer id="footer">
+<footer id="footer" style="background-color:#BE3145">
     <div class="container">
 
         {{ if isset .Site.Params "about_us" }}
         <div class="col-md-6 col-sm-6">
-            <h4>{{ i18n "aboutUs" }}</h4>
+            <h4> Sobre este sitio </h4>
 
-            {{ .Site.Params.about_us | markdownify }}
-
+						<h6 style="color:#FFFFFF"> Blog iniciado en el 2016 para compartir mis experiencias y aprendizajes.
+						Para cualquier duda o aclaración favor de contactar a carlo@makingdevs.com y muchas gracias por visitar.
+						</h6>
             <hr class="hidden-md hidden-lg hidden-sm">
 
         </div>
@@ -19,7 +20,7 @@
         <div class="col-md-6 col-sm-6">
 
             {{ if isset .Site.Params "recent_posts" }} {{ if .Site.Params.recent_posts.enable }}
-            <h4>{{ i18n "recentPosts" }}</h4>
+            <h4> Reciente </h4>
 
             <div class="blog-entries">
                 {{ range first 3 (where .Site.Pages "Type" "blog") }}
