@@ -3,7 +3,7 @@ tags = []
 categories = []
 description = ""
 menu = ""
-banner = ""
+thumbnail= ""
 images = []
 +++
 
