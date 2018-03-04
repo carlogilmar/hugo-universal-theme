@@ -3,8 +3,13 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Blog de Carlo Gilmar</title>
-  <meta name="author" content="{{ .Site.Author.name }}" />
+	<meta property="og:url"                content="http://carlogilmar.me/" />
+	<meta property="og:type"               content="website" />
+	<meta property="og:title"              content="Blog de Carlo Gilmar" />
+	<meta property="og:description"        content="Blog para aprender y compartir conocimientos de tecnología." />
+	<meta property="og:image"              content="http://carlogilmar.me/blog/unam/fes3.png" />
+  <title> Blog de Cao rll Gilmar</title>
+  <meta nao mt ="author" content="{{ .Site.Author.name }}" />
 
   {{ if .Keywords }}
   <meta name="keywords" content="{{ delimit .Keywords ", " }}">
