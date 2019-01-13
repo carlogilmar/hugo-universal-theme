@@ -1,107 +1,137 @@
 {{ if isset .Site.Params "recent_posts" }}
 {{ if .Site.Params.recent_posts.enable }}
 <section class="bar background-white no-mb">
-    <div class="container">
+	<div class="container">
 
-      <div class="row">
-				<div class="container text-center">
-					<h1 style="font-family: 'Lobster', cursive"> Registros Visuales </h1>
-					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-						<!-- Wrapper for slides -->
-						<div class="carousel-inner">
-							<div class="item active">
-								<img class="img-responsive" src="http://placehold.it/1200x600/555/000&text=One" alt="...">
+		<h1 class="text-center" style="font-family: 'Lobster', cursive"> Hi :) </h1>
+
+		<div class="row text-center">
+			<div class="col-md-4">
+				<img class="img-responsive" src="http://placehold.it/1200x600/555/000&text=One" alt="...">
+			</div>
+			<div class="col-md-4">
+				<img class="img-responsive" src="http://placehold.it/1200x600/555/000&text=One" alt="...">
+			</div>
+			<div class="col-md-4">
+				<a href="https://githubcampus.expert/carlogilmar/">
+					<img class="img-responsive" src="http://placehold.it/1200x600/555/000&text=One" alt="...">
+				</a>
+			</div>
+		</div>
+
+		<div class="row text-center">
+			<div class="col-md-4">
+				<h3 style="font-family: 'Lobster', cursive"> Registros Visuales </h3>
+			</div>
+			<div class="col-md-4">
+				<h3 style="font-family: 'Lobster', cursive"> Blog </h3>
+			</div>
+			<div class="col-md-4">
+				<a href="https://githubcampus.expert/carlogilmar/">
+					<h3 style="font-family: 'Lobster', cursive"> GitHub Campus Expert </h3>
+				</a>
+			</div>
+		</div>
+
+		<br><br><br><br>
+
+		<div class="row text-center">
+			<img src='../img/landing.jpg' />
+		<div>
+
+		<br><br><br><br>
+
+				<div class="row">
+					<div class="container text-center">
+						<h1 style="font-family: 'Lobster', cursive"> Registros Visuales </h1>
+						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+								<div class="item active">
+									<img class="img-responsive" src="://placehold.it/1200x600/555/000&text=One" alt="...">
+								</div>
+								<div class="item">
+									<img class="img-responsive" src="http://placehold.it/1200x600/fffccc/000&text=Two" alt="...">
+								</div>
+								<div class="item">
+									<img class="img-responsive" src="http://placehold.it/1200x600/fcf00c/000&text=Three" alt="...">
+								</div>
 							</div>
-							<div class="item">
-								<img class="img-responsive" src="http://placehold.it/1200x600/fffccc/000&text=Two" alt="...">
-							</div>
-							<div class="item">
-								<img class="img-responsive" src="http://placehold.it/1200x600/fcf00c/000&text=Three" alt="...">
-							</div>
+							<!-- Controls -->
+							<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left"></span>
+							</a>
+							<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+							</a>
 						</div>
-						<!-- Controls -->
-						<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left"></span>
-						</a>
-						<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right"></span>
-						</a>
 					</div>
 				</div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 text-center">
-          <h3>Github Campus Expert 🇲🇽</h3>
-          <a href="https://githubcampus.expert/carlogilmar/">
-            <img src="../img/carlogilmar.png" class="img-responsive"/>
-          </a><br><br>
-        </div>
-      </div>
+				<br><br><br><br>
 
-        <div class="col-md-12">
+				<div class="col-md-12">
 
+					<div class="heading text-center">
+						<h2 style="font-family: 'Lobster', cursive"> Posts </h2>
+					</div>
 
-            <div class="heading text-center">
-                <h2>Entradas Recientes</h2>
-            </div>
+					<p class="lead text-center" style="font-family: 'Lobster', cursive; font-size: 30px">
+					Escribo con la intención de compartir mis experiencias de aprendizaje en mi vida profesional.<br> ❤️
+					</p>
 
-            <p class="lead text-center">
-            	En este sitio comparto los aprendizajes y experiencias que voy recolectando poco a poco en el descubrimiento del desarrollador de software.
-						</p>
+					<br><br>
 
-            <!-- *** BLOG HOMEPAGE *** -->
+					<!-- *** BLOG HOMEPAGE *** -->
+					<div class="row">
 
-            <div class="row">
+						{{ $posts := .Paginate (where .Data.Pages "Type" "blog") }}
+						{{ range first 4 $posts.Pages }}
+						<div class="col-md-3 col-sm-6">
+							<div class="box-image-text blog">
+								<div class="top">
+									<div class="image" style="overflow:hidden">
+										{{ if isset .Params "thumbnail" }}
+										<img src="{{ .Site.BaseURL}}{{ .Params.thumbnail}}" class="img-responsive" alt="" >
+										{{ else }}
+										<img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
+										{{ end }}
+									</div>
+										<div class="bg"></div>
+										<div class="text">
+											<p class="buttons">
+											<a href="{{ .Permalink }}" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> {{ i18n "readMore" }}</a>
+											</p>
+										</div>
+								</div>
 
-                {{ $posts := .Paginate (where .Data.Pages "Type" "blog") }}
-                {{ range first 4 $posts.Pages }}
-                <div class="col-md-3 col-sm-6">
-                    <div class="box-image-text blog">
-                        <div class="top">
-                            <div class="image" style="overflow:hidden">
-                                {{ if isset .Params "thumbnail" }}
-                                <img src="{{ .Site.BaseURL}}{{ .Params.thumbnail}}" class="img-responsive" alt="" >
-                                {{ else }}
-                                <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
-                                {{ end }}
-                            </div>
-                            <div class="bg"></div>
-                            <div class="text">
-                                <p class="buttons">
-                                    <a href="{{ .Permalink }}" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> {{ i18n "readMore" }}</a>
-                                </p>
-                            </div>
-                        </div>
+								<div class="content">
+									<h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+									<p class="author-category">
+									{{ with .Params.author }}
+									{{ i18n "authorBy" }} <a href="#">{{ . }}</a>
+									{{ end }}
+									{{ i18n "publishedOn" }} {{ .Date.Format .Site.Params.date_format }}
+									</p>
+									<p class="intro">{{ .Summary }}</p>
+									<p class="read-more">
+									<a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
+									</p>
+								</div>
+							</div>
+							<!-- /.box-image-text -->
 
-                        <div class="content">
-                            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-                            <p class="author-category">
-                            {{ with .Params.author }}
-                            {{ i18n "authorBy" }} <a href="#">{{ . }}</a>
-                            {{ end }}
-                            {{ i18n "publishedOn" }} {{ .Date.Format .Site.Params.date_format }}
-                            </p>
-                            <p class="intro">{{ .Summary }}</p>
-                            <p class="read-more">
-                              <a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- /.box-image-text -->
+						</div>
+						{{ end }}
 
-                </div>
-                {{ end }}
+					</div>
+					<!-- /.row -->
 
-            </div>
-            <!-- /.row -->
+					<!-- *** BLOG HOMEPAGE END *** -->
 
-            <!-- *** BLOG HOMEPAGE END *** -->
-
-        </div>
-    </div>
-    <!-- /.container -->
+				</div>
+			</div>
+			<!-- /.container -->
 </section>
 <!-- /.bar -->
 {{ end }}
